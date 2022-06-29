@@ -16,8 +16,8 @@ except getopt.GetoptError:
 
 for opt, arg in opts:
     if opt == '-h':
+       print ("This is the -h switch")
        print ("sys_argv.py --input <inputfile> --user <user_id> --output <outputfile>")
-       print ("This is the -h")
        sys.exit()
 
     elif opt in ("-i", "--input"):
