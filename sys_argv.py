@@ -2,35 +2,29 @@
 import sys
 import getopt
 
-name1 = sys.argv[1]
-name2 = sys.argv[2]
-name3 = sys.argv[3]
+def main():
 
-def myfunct(argv):
-    if opt == '-h':
-        print ("This is the -h")
+    try:
+        opts, args = getopt.getopt(args, "hi:o:", ["--input", "--output"])
+    except getopt.GetoptError:
+        print ("sys_argv.py --input <inputfile> --user <user_id> --output <outputfile>")
+        sys.exit(2)
 
-    elif opt in ("-i", "--input"):
-        arg_input = arg
-    elif opt in ("-u", "--user");
-        arg_user = arg
-    elif opt in ("-o", "--output"):
-        arg_output arg
+    for opt, arg in opts:
+        if opt == '-h':
+            print ("sys_argv.py --input <inputfile> --user <user_id> --output <outputfile>")
+            print ("This is the -h")
+            sys.exit()
 
-def read_file(filename):
-    with open(filename) as file:
-        while True:
-            line = file.readline()
+        elif opt in ("-i", "--input"):
+            arg_input = arg
+        elif opt in ("-u", "--user"):
+            arg_user = arg
+        elif opt in ("-o", "--output"):
+            arg_output = arg
 
-            if len(line) == 0:
-                break
+"""
+print("hello", name1,',',name2,' and ', name3)
 
-            print(line)
 
-files = sys.argv[1:]
-
-for filename in files:
-    read_file(filename)
-
-print("hello", name1,",",name2," and ", name3)
-
+myfunct(sys.argv)
