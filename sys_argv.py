@@ -22,14 +22,11 @@ for opt, arg in opts:
 
    # python3 flags 
     if opt in ("-i", "--input"):
-       print ("Do this, ",  arg_input)
        arg_input = arg
     elif opt in ("-u", "--user"):
        arg_user = arg
-       print (arg_user)
     elif opt in ("-o", "--output"):
        arg_output = arg
-       print (arg_output)
 
 print ("Input file is ", arg_input)
 print ("User mod is ", arg_user)
