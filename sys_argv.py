@@ -30,3 +30,8 @@ for opt, arg in opts:
     elif opt in ("-o", "--output"):
        arg_output = arg
        print (arg_output)
+
+print ("Input file is ", arg_input)
+print ("User mod is ", arg_user)
+print ("Output file is ", arg_output)
+
