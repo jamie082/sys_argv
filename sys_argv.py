@@ -25,20 +25,24 @@ for opt, arg in opts:
    # python3 flags 
     if opt in ("-i", "--input"):
        arg_input = arg
+       print ("Input file is ", arg_input)
     elif opt in ("-u", "--user"):
        arg_user = arg
+       print ("User mod is ", arg_user)
     elif opt in ("-o", "--output"):
        arg_output = arg
-    
-    for i in range(1, n):
+       print ("Output file is ", arg_output) 
+    elif opt in (n):
+       for i in range(1, n):
         add += float(sys.argv[i])
+        print ("The sum is :", add)
 
     # output options section URL
     # http://www.geeksforgeeks.org/how-to-use-sys-argv-in-python/
 
 
-    print ("Input file is ", arg_input)
-    print ("User mod is ", arg_user)
-    print ("Output file is ", arg_output)
-    print ("The sum is :", add)
+    #print ("Input file is ", arg_input)
+    # print ("User mod is ", arg_user)
+    # print ("Output file is ", arg_output)
+    #print ("The sum is :", add)
 
