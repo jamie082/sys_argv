@@ -7,6 +7,8 @@ arg_input = ''
 arg_user = ''
 arg_output = ''
 
+n = len(sys.argv)
+add = 0.0
 
 try:
     opts, args = getopt.getopt(args, "hi:o:", ["--input", "--output"])
@@ -27,8 +29,16 @@ for opt, arg in opts:
        arg_user = arg
     elif opt in ("-o", "--output"):
        arg_output = arg
+    
+    for i in range(1, n):
+        add += float(sys.argv[i])
+
+    # output options section URL
+    # http://www.geeksforgeeks.org/how-to-use-sys-argv-in-python/
+
 
     print ("Input file is ", arg_input)
     print ("User mod is ", arg_user)
     print ("Output file is ", arg_output)
+    print ("The sum is :", add)
 
