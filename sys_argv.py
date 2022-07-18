@@ -1,19 +1,17 @@
 #!/usr/bin/python3
+
 import sys
 import getopt
 
-args = sys.argv[1:]
-arg_input = ''
-arg_user = ''
-arg_output = ''
+arg_input = ""
+arg_user = ""
+arg_output = ""
 
-n = len(sys.argv)
-add = 0.0
 
 try:
-    opts, args = getopt.getopt(args, "hi:o:two", ["--input", "--output", "--user"])
+    opts, args = getopt.getopt(argv[1:], "hi:u:o", ["--input", "--user", "--ouput"])
 except getopt.GetoptError:
-    print ("sys_argv.py --i <inputfile> -u <user_id> -o <outputfile>")
+    print ("sys_argv.py --input <inputfile> --user <user_id> --output <outputfile>")
     sys.exit(2)
 
 for opt, arg in opts:
@@ -23,21 +21,14 @@ for opt, arg in opts:
        sys.exit()
 
    # python3 flags 
-    elif opt in ("-i", "--input"):
-        arg_input = arg
-        print ("Input file is ", arg_input)
+    if opt in ("-i", "--input"):
+       arg_input = arg
     elif opt in ("-u", "--user"):
-        arg_user = arg
-        print ("User mode is ", arg_user)
+       arg_user = arg
     elif opt in ("-o", "--output"):
-        arg_output = arg
-        print ("Output file is ", arg_output)
-    """
-    elif opt in (sys.argv):
-        for i in range(1, n):
-            add += float(sys.argv[i])
-            print ("The sum is :", add)
-            """
+       arg_output = arg
 
-    # output options section URL
-    # http://www.geeksforgeeks.org/how-to-use-sys-argv-in-python/
+    print ("Input file is ", arg_input)
+    print ("User mod is ", arg_user)
+    print ("Output file is ", arg_output)
+
