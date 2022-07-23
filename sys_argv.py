@@ -7,8 +7,11 @@ arg_input = ''
 arg_user = ''
 arg_output = ''
 
+add = 0.0
+n = len(sys.argv)
+
 try:
-    opts, args = getopt.getopt(args, "hi:u:o", ["--input", "--user", "--output"])
+    opts, args = getopt.getopt(args, "hi:u:o:d", ["--input", "--user", "--output","--flags"])
 except getopt.GetoptError:
     print ("sys_argv.py --input <inputfile> --user <user_id> --output <outputfile>")
     sys.exit(2)
@@ -19,7 +22,6 @@ for opt, arg in opts:
        print ("sys_argv.py --input <inputfile> --user <user_id> --output <outputfile>")
        sys.exit()
 
-   # python3 flags 
     if opt in ("-i", "--input"):
        arg_input = arg
        print ("Input file is ", arg_input)
@@ -29,14 +31,8 @@ for opt, arg in opts:
     elif opt in ("-o", "--output"):
        arg_output = arg
        print ("Output file is ", arg_output)
+       break
 
-
-    # http://www.geeksforgeeks.org/how-to-us-sys-argv-in-python/
-
-add = 0.0
-n = len(sys.argv)
-
-for i in range(1, n):
-    add += float(sys.argv[i])
-
-print("The sum is :", add)
+       for i in range(1, n):
+           add += float(sys.argv[i])
+       print("answer: ", add)
